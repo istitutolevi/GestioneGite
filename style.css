@@ -155,12 +155,10 @@ background-color:gray;
 }
 .login{
 	width:360px;
-	margin:50px auto;
-
 	border-radius:10px;
 	border:2px solid #ccc;
 	padding:10px 40px 25px;
-	margin-top:50px;
+	margin: auto auto 50px;
 }
 input[type=text], input[type=password], select, textarea{
 width:99%;

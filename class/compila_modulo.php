@@ -172,7 +172,7 @@
 			$today = date("d.m.y");
 		?>
 
-<body class="background" onload="myFunction()">
+<body class="background" onload="myFunction()" style="background-image: url('../img/background.png');">
 	<link href="../styletopnav.css" rel="stylesheet" type="text/css">
 	<div id="main" style="border-style: solid; background-color:white;">
 

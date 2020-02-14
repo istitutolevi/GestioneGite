@@ -8,7 +8,7 @@ session_start();
 		// echo $_POST['password'];
 		if($_POST['class_name'] == '' || $_POST['password'] == '')
 		{
-			$error = "Campi non inseriti";
+			$error = "Inserire i dati!";
 		}
 		else
 		{
@@ -47,7 +47,7 @@ session_start();
 		}
 		else{
 
-			$error="Password incorrettaaaa";
+			$error="Password Incorretta!";
 		}}
 
 		$db = null;

@@ -107,7 +107,7 @@
 	</head>
 	<link href="../style.css" rel="stylesheet" type="text/css">
 	<link href="../styletopnav.css" rel="stylesheet" type="text/css">
-	<body class="background" onload="myFunction()">
+	<body class="background" onload="myFunction()" style="background-image: url('../img/background.png');">
 		<div id="main" style="border-style: solid; background-color:white; ">
 			<a href="http://www.comune.vignola.mo.it"><img class="leviLogo" src="../img/logo_levi.png" style="height: 140px;"></a>
 			<a href="http://www.istitutolevi.it"><img class="vignolaLogo" src="../img/vignola_white_logo.png" align=right></a>

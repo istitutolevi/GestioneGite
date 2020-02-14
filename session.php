@@ -8,7 +8,7 @@
 	$login_session =$row["class_name"];
 	if(!isset($login_session))
 	{
-		mysqli_close($connection);
+		mysqli_close($con);
 		header('Location: index.php'); 
 	}
 ?>

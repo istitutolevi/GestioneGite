@@ -24,11 +24,11 @@
 						Registrati
 					</H1>
 					<br/><br/>
-					<input type="text" name="Classe" autofocus style="width:100%; height:30;" placeholder="Classe*" tabindex="1" required>
+					<input type="text" name="Classe" autofocus style="width:100%; height:30px;" placeholder="Classe*" tabindex="1" required>
 					<br/><br/>
-					<input type="text" name="Email" style="width:100%; height:30;" placeholder="Email*" tabindex="2" required>
+					<input type="text" name="Email" style="width:100%; height:30px;" placeholder="Email*" tabindex="2" required>
 					<br/><br/>
-					<input type="text" name="N_stud" style="width:100%; height:30;" placeholder="Numero studenti della classe*" tabindex="3" required>
+					<input type="text" name="N_stud" style="width:100%; height:30px;" placeholder="Numero studenti della classe*" tabindex="3" required>
 					<br/><br/>
 					<select name="indirizzo" style="width:100%;">
 						<option value="ITT">	ITT		</option>
@@ -37,9 +37,9 @@
 						<option value="IPIA">	IPIA	</option>
 					</select>
 					<br/><br/>
-					<input type="password" name="Password" style="width:100%; height:30;" placeholder="Password*" tabindex="4" required>
+					<input type="password" name="Password" style="width:100%; height:30px;" placeholder="Password*" tabindex="4" required>
 					<br/><br/>
-					<input type="password" name="RPassword" style="width:100%; height:30;" placeholder="Ripeti password*" tabindex="5" required>
+					<input type="password" name="RPassword" style="width:100%; height:30px;" placeholder="Ripeti password*" tabindex="5" required>
 					<br/><br/>
 					<p style="color:red; font: 12px Verdana, Arial;">*=campi obbligatori</p>
 					<br/><br/>

@@ -13,7 +13,8 @@
   }
 
   .topnav{
-    background-color: #2b2a2a;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
     overflow: hidden;
     margin: auto;
     left: 50%;
@@ -21,7 +22,6 @@
     width: 64.2%;
     /* top: 100%; */
     transform: translate(-50%);
-    border-bottom: solid 1px white;
     padding-left: 0;
     z-index: 300;
     

@@ -15,7 +15,7 @@
 	</head>
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link href="styletopnav.css?v=<?php echo time();?>" rel="stylesheet" type="text/css">
-	<body class="background" style="overflow:hidden;">
+	<body class="background" style="overflow:hidden; background-image: url('img/background.png');">
 	
 		<div id="main" style="border-style: solid; background-color:white; ">
 			<a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo" style="float: right;"></a>
@@ -46,14 +46,10 @@
 			?>
 		<div id="main1">
 			<br>
-			<img src="img/gran_angolo.jpg" style="width:100%; height:100%;"align="middle" title="Istituto Primo Levi di Vignola">	 
+
 		<br>
 		<br>
-		<div class="panel">
-			<div class="panel-body" style="width:100%">
-				<p class="text-center" style="color:white;">Studenti referenti del progetto Lyskevych Igor, Degliesposti Claudio e Prini Riccardo </p>
-			</div>
-		</div>
+
 		</div>
 		<?php
 			if (isset($_POST["updatedData"]))

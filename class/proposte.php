@@ -1,6 +1,7 @@
 <html>
 	<head>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<title>
 			compilazione modulo
 		</title>
@@ -107,7 +108,7 @@
 		?>
 	<link href="../style.css" rel="stylesheet" type="text/css">
 	<link href="../styletopnav.css" rel="stylesheet" type="text/css">
-	<body class="background" onload="myFunction()">
+	<body class="background" onload="myFunction()" style="background-image: url('../img/background.png');">
 		<div id="main" style="border-style: solid; background-color:white; ">
 			<a href="http://www.comune.vignola.mo.it"><img src="../img/vignola_white_logo.png" class="vignolaLogo" style="float: right;"></a>
 			<a href="http://www.istitutolevi.it"><img src="../img/logo_levi.png" class="leviLogo" align=left style="height:140px"></a>
@@ -136,7 +137,7 @@
 			
 		</div>
 		<form action="exe_proposte.php" method="POST">
-			<div class="login" style="background-color:white;">	
+			<div class="login" style="background-color: rgba(0,0,0,0.5);">
 				<!--<select name="indirizzo" style="width:100%;">
 					<option value="ITT">	ITT	</option>
 					<option value="IPSC">	IPSC	</option>
@@ -144,30 +145,29 @@
 					<option value="IPIA">	IPIA		</option>
 				</select>
 				<br>-->
-				<h1 align="center" style="color:black">Manda Proposta</h1>
+				<h1 align="center" style="color:white">Manda Proposta</h1>
 							
-				<input type="text" name="destinazione" placeholder="Destinazione" style="width:100%;">
-				<br>
+				<input type="text" class="form-control form-control-lg" name="destinazione" placeholder="Destinazione" style="width:100%;">
+
 				
-				<input type="text" name="doc_acc" placeholder="Inserisci i docenti accompagnatori separandoli con una virgola" style="width:100%;">
-				<br>
+				<input type="text" class="form-control form-control-lg" name="doc_acc" placeholder="Inserisci i docenti accompagnatori separandoli con una virgola" style="width:100%;">
+
 				
-				<input type="text" name="doc_sost"  placeholder="Inserisci i docenti sostituti separandoli con una virgola" style="width:100%;">
-				<br>
+				<input type="text" class="form-control form-control-lg" name="doc_sost"  placeholder="Inserisci i docenti sostituti separandoli con una virgola" style="width:100%;">
+
 				
-				<textarea name="Obiettivi1" placeholder="Obiettivi didattici" style="width:100%;"></textarea>
-				<br>
+				<textarea name="Obiettivi1" class="form-control form-control-lg" placeholder="Obiettivi didattici" style="width:100%;"></textarea>
+
 				
-				<input type="text" name="per_data"  placeholder="Periodo Data" style="width:100%;">
-				<br>
+				<input type="text" name="per_data" class="form-control form-control-lg"  placeholder="Periodo Data" style="width:100%;">
 					
-				<input type="text" name="data_cdc" id="cur_data"  placeholder="Data odierna Consiglio di Classe" style="width:100%;">
+				<input type="text" name="data_cdc" id="cur_data" class="form-control form-control-lg"  placeholder="Data odierna Consiglio di Classe" style="width:100%;">
 				<br>
+
+				<input type="submit" id="invia" class="btn btn-success" value="Invia" style="width:100%; height:50px;">
 				<br>
-				<input type="submit" id="invia" class="button buttonh button1" value="Invia" style="width:100%; height:50px;">
-				<br>
-				<br>
-				<a style="color:red; font-size:12px;">*Per inserire nuove proposte inviare e ritornare su proposte</a>
+                <br>
+				<a style="color:red; font-size:14px;">*Per inserire nuove proposte inviare e ritornare su proposte</a>
 			</div>
 		</form>
 		<script type="text/javascript">
