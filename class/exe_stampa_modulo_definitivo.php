@@ -1,5 +1,5 @@
 <?php
-	include_once 'vendor/autoload.php';
+	include_once '../vendor/autoload.php';
 	include ('session_class.php');
 	$class = $_SESSION['n_classe'];
 	include ('../conn_serv.php');

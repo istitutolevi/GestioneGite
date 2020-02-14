@@ -166,6 +166,9 @@
 			echo"<select name=\"selected\" style=width:100%>";
 			echo "<option value=\"\" disabled selected>Seleziona gita</option>";
 			$utente=$_SESSION['n_classe'];
+             $p = "";
+             $g = "";
+             $f = "";
 			for($A=0;$A<$I;$A++)
 			{
 				
@@ -174,9 +177,9 @@
 				$result = mysqli_query($con, $sqlquery);
 				$row= mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-				${'n1' . 'a'} = $row['meta'];
-				${'n2' . 'a'} = $row['data_gita'];
-				${'n3' . 'a'} = $row['doc_resp'];
+				$n1a = $row['meta'];
+				$n2a = $row['data_gita'];
+                $n3a = $row['doc_resp'];
 				
 				if($n1a == $p && $n2a == $g and $n3a == $f)
 				{
@@ -206,11 +209,11 @@
         </div>
 		<div style="text-align:center;">
 			<?php
-				$percorsoWordProposte=$class . '.docx';
+				$percorsoWordProposte = $class . '.docx';
 				if(file_exists($percorsoWordProposte))
 				{
 					echo'<br>';
-					$Fname = $classe + ".docx";
+					$Fname = $class . ".docx";
 					echo'<a href="' . $class . '.docx" style="color:red;" >SCARICA IL WORD </a>';
 				}
 				else
