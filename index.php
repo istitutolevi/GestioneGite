@@ -11,6 +11,7 @@ if(isset($_POST['registration']))
 <!doctype html>
 <html>
 	<head>
+        <link href="style2020.css" rel="stylesheet" type="text/css">
 		<meta charset="UTF-8">
 
 		<title>
@@ -21,7 +22,7 @@ if(isset($_POST['registration']))
 	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
 	<link href="styletopnav.css?v=<?php echo time();?>" rel="stylesheet" type="text/css">
-	<body class="background" style="background-image: url('img/background.png');">
+	<body>
 			<a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo" style="float: right;"></a>
 			<a href="http://www.istitutolevi.it"><img src="img/logo_levi.png" class="leviLogo" align=left style="height:140px"></a>
 		</div>

@@ -6,28 +6,28 @@
   font-family: 'Nunito', sans-serif !important;
 }
 .topnav {
-    background-color: #2b2a2a;
-    overflow: hidden;
-    margin:auto;
-    
-  }
+                background-color: #2b2a2a;
+                overflow: hidden;
+                margin:auto;
 
-  .topnav{
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 25px;
-    overflow: hidden;
-    margin: auto;
-    left: 50%;
+              }
+
+topnav{
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 25px;
+  overflow: hidden;
+  margin: auto;
+  left: 50%;
     position: absolute;
     width: 64.2%;
     /* top: 100%; */
     transform: translate(-50%);
     padding-left: 0;
     z-index: 300;
-    
-    
+
+
   }
-  
+
   
   .topnav a {
     float: left;
@@ -120,10 +120,7 @@
     }
   }
 
-  .vignolaLogo{
 
-    height: 90%;
-  }
 
   .leviLogo{
 

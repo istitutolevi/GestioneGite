@@ -49,7 +49,7 @@
 			<a style="font-size:20px; color:white;">Sei stato loggato con successo come utente amministratore!</a>
 			<br>
 			<br>
-			<img src="img/gran_angolo.jpg" style="width:100%; height:100%;"align="middle" title="Istituto Primo Levi di Vignola">		 
+			<img src="img/gran_angolo.png" style="width:100%; height:100%;"align="middle" title="Istituto Primo Levi di Vignola">
 			<br>
 			<br>
 			<div class="panel">
