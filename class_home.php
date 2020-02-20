@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 	<head>
-
 		<meta charset="UTF-8">
+        <link href="style2020.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
 		<script src="conn_serv.php"></script>
 		<?php 
 			include('session_class.php');
@@ -12,33 +13,30 @@
 		?>
 		<title>Benvenuto!</title>
 	</head>
-	<link href="style2020.css" rel="stylesheet" type="text/css">
 
-	<body class="background">
-        <div>
-			<a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo"></a>
-			<a href="http://www.istitutolevi.it"><img src="img/logo_levi.png" class="leviLogo"></a>
-
-		<div class="topnav">
-			<a href = "class_home.php">Home								</a>
-			<a href = "class/proposte.php">Manda proposta				</a>
-			<a href = "class/compila_modulo.php">Compila modulo			</a>
-			<a href = "class/stampa_modulo.php">Stampa modulo           </a>
-			<a href = "class/gestisci_utente.php">Gestisci utente		</a>
-			<a href = "class/gestisci_proposte.php">Gestisci proposte	</a>
-			<a href = "class/compila_relazione.php">Compila relazione	</a>
-			<a href = "class/contattaci.php">Contattaci					</a>
-			<a href = "Log_out.php">Log Out								</a>
-	    </div>
-	    </div>
-
-		<?php
-			echo"<h1>Benvenuto, $utente!</h1>"
+	<body>
+        <?php
+        echo"<h1 class=\"home-welcome\">Benvenuto, $utente!</h1>"
         ?>
 
-		<div class="main1">
-			<br>
-            <img src="img/gran_angolo.png" class="img">
-		</div>
+        <header class="header-section">
+            <nav class="header-nav">
+                <ul class="main-menu">
+                    <li><a href = "class_home.php" class="active">HOME</a></li>
+                    <li><a href = "class/proposte.php">MANDA PROPOSTA</a></li>
+                    <li><a href = "class/compila_modulo.php">COMPILA MODULO</a></li>
+                    <li><a href = "class/stampa_modulo.php">STAMPA MODULO</a></li>
+                    <li><a href = "class/gestisci_utente.php">GESTISCI UTENTE</a></li>
+                    <li><a href = "class/gestisci_proposte.php">GESTISCI PROPOSTE</a></li>
+                    <li><a href = "class/compila_relazione.php">COMPILA RELAZIONE</a></li>
+                    <li><a href = "class/contattaci.php">CONTATTACI</a></li>
+                    <li><a href = "Log_out.php">LOGOUT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <img src="img/gran_angolo.png" class="img">
+        <a href="http://www.istitutolevi.it"><img src="img/logo_levi.png" class="leviLogo"></a>
+        <a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo"></a>
 	</body>
 </html>

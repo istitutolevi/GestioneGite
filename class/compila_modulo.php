@@ -2,6 +2,7 @@
 
 <head>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="../style2020.css" rel="stylesheet" type="text/css">
 	<style>
 
 		*, ::after, ::before {
@@ -90,7 +91,7 @@
 		.modulo {
 
 			width: 793px;
-			height: 100%px;
+			height: 100%;
 			background-color: white;
 			/* float: right; */
 			position: relative;
@@ -106,7 +107,6 @@
 			position: relative;
 			height: 100px;
 			border-radius:0px;
-			overflow-y:none;
 			margin-top: 0px !important;
 			max-width: 793px;
 			min-width: 793px;
@@ -151,7 +151,7 @@
 			left: 50%;
 			position: relative;
 			transform: translate(-50%);
-			padding: 1 !important;
+			padding: 5px !important;
 			height:35px;
 		}
 
@@ -173,77 +173,26 @@
 		?>
 
 <body class="background" onload="myFunction()" style="background-image: url('../img/background.png');">
-	<link href="../styletopnav.css" rel="stylesheet" type="text/css">
-	<div id="main" style="border-style: solid; background-color:white;">
-
-		<a href="http://www.comune.vignola.mo.it"><img src="../img/vignola_white_logo.png" class="vignolaLogo" style="float: right;"></a>
-		<a href="http://www.istitutolevi.it"><img src="../img/logo_levi.png" class="leviLogo" align=left style="height:140px"></a>
-
-
-	<div class="topnav">
-		<a href="../class_home.php">Home </a>
-		<a href="proposte.php">Manda proposta </a>
-		<a href="compila_modulo.php">Compila modulo </a>
-		<a href="stampa_modulo.php">Stampa modulo</a>
-		<!--<a href="javascript:AlertIt();" ;>Gestisci modulo </a>-->
-		<a href="gestisci_utente.php">Gestisci utente </a>
-		<a href="gestisci_proposte.php">Gestisci proposte </a>
-		<a href="compila_relazione.php">Compila relazione </a>
-		<a href="contattaci.php">Contattaci </a>
-		<a href="../Log_out.php">Log Out </a>
-	</div>
-	</div>
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<?php
-				echo"<b>Benvenuto ".$_SESSION['n_classe']."</b>";
-			?>
-
-	</div>
-
+<header class="header-section">
+    <nav class="header-nav">
+        <ul class="main-menu">
+            <li><a href = "../class_home.php" class="active">HOME</a></li>
+            <li><a href = "proposte.php">MANDA PROPOSTA</a></li>
+            <li><a href = "compila_modulo.php">COMPILA MODULO</a></li>
+            <li><a href = "stampa_modulo.php">STAMPA MODULO</a></li>
+            <li><a href = "gestisci_utente.php">GESTISCI UTENTE</a></li>
+            <li><a href = "gestisci_proposte.php">GESTISCI PROPOSTE</a></li>
+            <li><a href = "compila_relazione.php">COMPILA RELAZIONE</a></li>
+            <li><a href = "contattaci.php">CONTATTACI</a></li>
+            <li><a href = "../Log_out.php">LOGOUT</a></li>
+        </ul>
+    </nav>
+</header>
 
 
 	<script>
-
-
-		var a = 0;
-
-		function closemenu() {
-
-			if (a % 2 == 0) {
-				openNav();
-				a++;
-			} else {
-				closeNav();
-				a++;
-			}
-
-
-
-		}
-
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "250px";
-			document.getElementById("main").style.marginLeft = "250px";
-			document.getElementById("main1").style.marginLeft = "250px";
-
-		}
-
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-			document.getElementById("main").style.marginLeft = "0";
-			document.getElementById("main1").style.marginLeft = "0px";
-
-
-		}
-
-		function AlertIt() {
-			alert("coming soon")
-		}
-
 		function myFunction() {
 			var now = new Date();
-
 			var day = ("0" + now.getDate()).slice(-2);
 			var month = ("0" + (now.getMonth() + 1)).slice(-2);
 			var today = (day) + "-" + (month) + "-" + now.getFullYear();
