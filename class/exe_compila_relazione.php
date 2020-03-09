@@ -1,55 +1,48 @@
 <?php
-	include_once 'vendor/autoload.php';
+	include_once '../vendor/autoload.php';
 	include ('session_class.php');
-	$class = $_SESSION['n_classe'];
 	include ('../conn_serv.php');
-	
-	$classe = $_POST['classe'];
-	$sez = $_POST['sezione'];
-	$destinazione = $_POST['destinazione'];
-	$data = $_POST['data'];
-	$doc_ref = $_POST['doc_ref'];
-	$doc_acc = $_POST['doc_acc'];
-	$radio1 = $_POST['iniziativa'];
-	$textarea1 = $_POST['iniz_txtarea'];
-	$radio2 = $_POST['obb'];
-	$textarea2 = $_POST['osservazioni'];
-	$radio3 = $_POST['comp'];
-	$textarea3 = $_POST['comp_textarea'];
-	$textarea4 = $_POST['segnala_alunni'];
-	$textarea5 = $_POST['segnalazioni_pos_textarea'];
-	$textarea6 = $_POST['valutazioni_textarea'];
-	$textarea7 = $_POST['disservizi_textarea'];
-	$textarea8 = $_POST['segnalazioni_pos_textarea'];
-	$radio4 = $_POST['grad'];
-	$textarea8 = $_POST['osservazioni_textarea'];
+
+	$class= $_SESSION['n_classe'];
+	$classe= $_POST['classe'];
+	$sez= $_POST['sezione'];
+	$destinazione= $_POST['destinazione'];
+	$data= $_POST['data'];
+	$doc_ref= $_POST['doc_ref'];
+	$doc_acc= $_POST['doc_acc'];
+	$radio1= $_POST['iniziativa'];
+	$textarea1= $_POST['iniz_txtarea'];
+	$radio2= $_POST['obb'];
+	$textarea2= $_POST['osservazioni'];
+	$radio3= $_POST['comp'];
+	$textarea3= $_POST['comp_textarea'];
+	$textarea4= $_POST['segnala_alunni'];
+	$textarea5= $_POST['segnalazioni_pos_textarea'];
+	$textarea6= $_POST['valutazioni_textarea'];
+	$textarea7= $_POST['disservizi_textarea'];
+	$textarea8= $_POST['segnalazioni_pos_textarea'];
+	$radio4= $_POST['grad'];
+	$textarea8= $_POST['osservazioni_textarea'];
 	
 	$phpWord = new \PhpOffice\PhpWord\PhpWord();
-	
 	$section = $phpWord->addSection();
-	
 	$sectionStyle = $section->getStyle();
-
 	$sectionStyle->setMarginRight(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
 	$sectionStyle->setMarginLeft(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
 	$sectionStyle->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
 	$sectionStyle->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
-	
 	$src=('../img/Intestazione_scuola.png');
 	$section->addImage($src);
-	
 	$fontStyle2 = new \PhpOffice\PhpWord\Style\Font();
 	$fontStyle2->setBold(true);
 	$fontStyle2->setName('Tahoma');
 	$fontStyle2->setSize(9);
-	
 	$fontStyle = new \PhpOffice\PhpWord\Style\Font();
 	$fontStyle->setBold(true);
 	$fontStyle->setName('Tahoma');
 	$fontStyle->setSize(11);
 	$myTextElement = $section->addText("RELAZIONE FINALE VISITA O VIAGGIO D' ISTRUZIONE");
 	$myTextElement->setFontStyle($fontStyle);
-	
 	$section->addText('Classe/i ',$fontStyle2);
 	$section->addText($classe);
 	$section->addText();
@@ -77,7 +70,6 @@
 		if($radio1 == "c")
 			$a3="x";
 	$section->addText("Realizzazione dell' iniziativa: ", $fontStyle2);
-	//i would insert in this cell ^ the bullet list here below
 	$section->addListItem("[ ".$a1." ] secondo le previsioni");
 	$section->addListItem("[ ".$a2." ] parzialmente realizzata (motivare)");
 	$section->addListItem("[ ".$a3." ] non realizzata (motivare)");
@@ -94,7 +86,6 @@
 		if($radio2 == "c")
 			$a3="x";
 	$section->addText('Risultati conseguiti in relazione agli obiettivi prefissati: ', $fontStyle2);
-	//i would insert in this cell ^ the bullet list here below
 	$section->addListItem("[ ".$a1." ] risultati ottenuti secondo gli obiettivi prefissati");
 	$section->addListItem("[ ".$a2." ] risultati parzialmente ottenuti (motivare nelle osservazioni)");
 	$section->addListItem("[ ".$a3." ] risultati non ottenuti (motivare nelle osservazioni)");
@@ -114,7 +105,6 @@
 		if($radio3 == "c")
 			$a3="x";
 	$section->addText('Comportamento generale degli alunni: ', $fontStyle2);
-	//i would insert in this cell ^ the bullet list here below
 	$section->addListItem("[ ".$a1." ] buono");
 	$section->addListItem("[ ".$a2." ] discreto, qualche intemperanza");
 	$section->addListItem("[ ".$a3." ] non sufficiente (motivare):");
@@ -160,11 +150,9 @@
 	$section->addText();
 	$section->addText("Firma");
 	$section->addText("____________");
-	
 	$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 	$name = "relazione_".$class."_".date("Y-m-d").".docx";
 	$objWriter->save($name);
 
 	header("Location: $name");
-
 ?>

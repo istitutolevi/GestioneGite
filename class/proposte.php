@@ -48,10 +48,10 @@
 				<input type="text" name="per_data" class="text-proposta"  placeholder="Periodo Data">
 				<input type="text" name="data_cdc" id="cur_data" class="text-proposta"  placeholder="Data odierna Consiglio di Classe">
 				<br>
-				<input type="submit" id="invia" class="btn btn-success" value="INVIA" style="width:100%; height:50px;">
+				<input type="submit" id="invia" class="form-proposta-btn base-btn" value="INVIA" >
 				<br>
                 <br>
-				<a style="color:red; font-size:14px;">*Per inserire nuove proposte inviare e ritornare su proposte</a>
+				<a>*Per inserire nuove proposte inviare e ritornare su proposte</a>
 			</div>
 		</form>
 		<script type="text/javascript">
