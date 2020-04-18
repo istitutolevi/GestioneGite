@@ -1,7 +1,7 @@
 <?php
 		
 	include ('../conn_serv.php');
-	include ('session_admin.php');
+	include ('../session_admin.php');
 
 	//$class_name		= addslashes($_POST['class']); 
 	$destinazione 	= addslashes($_POST["destinazione"]);

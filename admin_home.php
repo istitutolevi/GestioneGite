@@ -1,62 +1,174 @@
-<!doctype html>
-<html>
-	<head>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<meta charset="UTF-8">
-		<script src="conn_serv.php"></script>
-		<?php 
-			include('session_admin.php');
-			include('admin/script.php3');
-			$utente=$_SESSION['n_classe'];
-			array_map('unlink', glob("admin/*.docx"));
-		?>
-		<title>Benvenuto!</title>
-	</head>
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="styletopnav.css" rel="stylesheet" type="text/css">
-	<body class="background">
-		<div id="main" style="border-style: solid; background-color:white; ">
-			<a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo" style="float: right;"></a>
-			<a href="http://www.istitutolevi.it"><img src="img/logo_levi.png" class="leviLogo" style="height:140px" align=left></a>
-		
-	
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<?php 
-				echo"<b>Benvenuto ".$_SESSION['n_classe']."</b>";
-			?></div>
-			<div class="topnav">
-			<a href="admin_home.php">Home</a>
-			<a href="admin/stampa_proposte.php">Stampa Proposte</a>
-			<a href="admin/mostra_proposte.php">Mostra Proposte</a>
-			<a href="admin/gestisci_proposte.php">Gestisci proposte</a>
-			<a href="admin/stampa_proposte_alle_famiglie.php">Stampa Proposte alle famiglie</a>
-			<a href="javascript:AlertIt();">Contatta utente</a>
-			<a href="admin/gestione_account.php">Gestisci Utenti</a>
-			<a href="admin/reset_password.php">Reset Password</a>
-			<a href = "admin/elimina_proposte.php">Elimina Proposte</a>
-			<a href = "sign_in.php">Registrazione</a>
-			<a href="Log_out.php">Log Out</a>
-			</div>
-			</div>
-		
-		<div id="main1">
-		
-			
-			<?php
-				echo"<h1 style=\"text-align: center; color:white;\">Benvenuto, $utente!</h1>"
-			?>
-			<a style="font-size:20px; color:white;">Sei stato loggato con successo come utente amministratore!</a>
-			<br>
-			<br>
-			<img src="img/gran_angolo.png" style="width:100%; height:100%;"align="middle" title="Istituto Primo Levi di Vignola">
-			<br>
-			<br>
-			<div class="panel">
-				<div class="panel-body" style="width:100%">
-					<p class="text-center" style="color:white;">Studenti referenti del progetto Lyskevych Igor e Degliesposti Claudio</p>
-				</div>
-			</div>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Benvenuto</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/stile.css">
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="conn_serv.php"></script>
+    <script src="vendor/jquery/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <?php
+    include('session_admin.php');
+    include('admin/script.php3');
+    $utente = $_SESSION['n_classe'];
+    array_map('unlink', glob("admin/*.docx"));
+    ?>
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <?php
+            echo "<h6>Benvenuto, $utente!</h6>"
+            ?>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="admin_home.php">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Home</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Proposte
+        </div>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/stampa_proposte.php">
+                <i class="fas fa-fw fa-print"></i>
+                <span>Stampa Proposte</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/mostra_proposte.php">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Mostra Proposte</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/gestisci_proposte.php">
+                <i class="fas fa-fw fa-archive"></i>
+                <span>Gestisci Proposte</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/stampa_proposte_alle_famiglie.php">
+                <i class="fas fa-fw fa-print"></i>
+                <span>Stampa Proposte alle famiglie</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/elimina_proposte.php">
+                <i class="fas fa-fw fa-trash"></i>
+                <span>Elimina Proposte</span></a>
+        </li>
+
+        </br>
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <div class="sidebar-heading">
+            Utenti
+        </div>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/gestione_account.php">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Gestisci Utenti</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="admin/reset_password.php">
+                <i class="fas fa-fw fa-reply"></i>
+                <span>Reset Password</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="sign_in.php">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Registrazione</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <li class="nav-item">
+            <a class="nav-link" href="Log_out.php">
+                <i class="fas fa-fw fa-user-alt-slash"></i>
+                <span>Log Out</span></a>
+        </li>
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
 </html>

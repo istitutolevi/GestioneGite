@@ -12,12 +12,12 @@ $row= mysqli_fetch_array($result, MYSQLI_ASSOC);
 $tipo= $row['tipo'];
 if($tipo != '1')
 {
-	mysqli_close($connection);
+	mysqli_close($con);
 	header('Location: index.php');
 	session_destroy();
 }
 if(!isset($login_session)){
-mysqli_close($connection);
+mysqli_close($con);
 header('Location: ../index.php'); 
 }
 ?>

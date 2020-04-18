@@ -1,43 +1,90 @@
-<html>
-	<head>
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Benvenuto!</title>
+    <link rel="stylesheet" href="../css/stile.css">
+    <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
+    <script src="../conn_serv.php"></script>
+    <script src="../vendor/jquery/jquery.slim.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="../style2020.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
-		<title>
-			Contattaci
-		</title>
-		<?php
-			include('session_class.php');
-			$n_classe=$_SESSION['n_classe'];
-		?>
-		<title>
-			Gestisci proposte
-		</title>
+    <?php
+    include('../session_class.php');
+    $utente = $_SESSION['n_classe'];
+    ?>
+    <title>Contattaci</title>
+</head>
 
-	</head>
-	<body class="body-background" onload="myFunction()" >
-    <header class="header-section">
-        <nav class="header-nav">
-            <ul class="main-menu">
-                <li><a href = "../class_home.php" class="active">HOME</a></li>
-                <li><a href = "proposte.php">MANDA PROPOSTA</a></li>
-                <li><a href = "compila_modulo.php">COMPILA MODULO</a></li>
-                <li><a href = "stampa_modulo.php">STAMPA MODULO</a></li>
-                <li><a href = "gestisci_utente.php">GESTISCI UTENTE</a></li>
-                <li><a href = "gestisci_proposte.php">GESTISCI PROPOSTE</a></li>
-                <li><a href = "compila_relazione.php">COMPILA RELAZIONE</a></li>
-                <li><a href = "contattaci.php">CONTATTACI</a></li>
-                <li><a href = "../Log_out.php">LOGOUT</a></li>
+<body class="bg">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <?php
+            echo "<h1>Benvenuto, $utente!</h1>"
+            ?>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse dropdown" id="navbarResponsive">
+            <ul class="navbar-nav ml-5">
+                <li class="nav-item">
+                    <a class="nav-link" href="../class_home.php">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proposte.php">MANDA PROPOSTA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="compila_modulo.php">COMPILA MODULO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="stampa_modulo.php">STAMPA MODULO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gestisci_utente.php">GESTISCI UTENTE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gestisci_proposte.php">GESTISCI PROPOSTE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="compila_relazione.php">COMPILA RELAZIONE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contattaci.php">CONTATTACI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Log_out.php">LOGOUT</a>
+                </li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
+</nav>
+
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <section class="row justify-content-center mt-5">
+                <div class="form-group">
+                    <h1 class="text-center">Per qualsiasi informazione scrivi a viaggi@istitutolevi.edu.it</h1>
+                </div>
+
+            </section>
 
 
-			
+        </div>
+        <!-- End of Main Content -->
 
-		<div class="contattaci-div">
-			Per qualsiasi informazione o problema scrivi a <a href="mailto:viaggi@istitutolevi.edu.it"><span> viaggi@istitutolevi.edu.it</span></a>
-		</div>
-	</body>
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+
+</body>
 </html>

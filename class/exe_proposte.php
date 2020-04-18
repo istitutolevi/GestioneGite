@@ -1,6 +1,6 @@
  <?php
 	include ('../conn_serv.php');
-	include ('session_class.php');
+	include ('../session_class.php');
 
 	$class_name= $_SESSION['n_classe'];
     $destinazione= strtoupper($_POST["destinazione"]);

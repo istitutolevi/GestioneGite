@@ -1,42 +1,69 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-        <link href="style2020.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
-		<script src="conn_serv.php"></script>
-		<?php 
-			include('session_class.php');
-			include('admin/script.php3');
-			$utente=$_SESSION['n_classe'];
-			array_map('unlink', glob("class/*.docx"));
-		?>
-		<title>Benvenuto!</title>
-	</head>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/stile.css">
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <script src="conn_serv.php"></script>
+    <script src="vendor/jquery/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<body>
-        <?php
-        echo"<h1 class=\"home-welcome\">Benvenuto, $utente!</h1>"
-        ?>
+    <?php
+    include('session_class.php');
+    $utente = $_SESSION['n_classe'];
+    array_map('unlink', glob("class/*.docx"));
+    ?>
 
-        <header class="header-section">
-            <nav class="header-nav">
-                <ul class="main-menu">
-                    <li><a href = "class_home.php" class="active">HOME</a></li>
-                    <li><a href = "class/proposte.php">MANDA PROPOSTA</a></li>
-                    <li><a href = "class/compila_modulo.php">COMPILA MODULO</a></li>
-                    <li><a href = "class/stampa_modulo.php">STAMPA MODULO</a></li>
-                    <li><a href = "class/gestisci_utente.php">GESTISCI UTENTE</a></li>
-                    <li><a href = "class/gestisci_proposte.php">GESTISCI PROPOSTE</a></li>
-                    <li><a href = "class/compila_relazione.php">COMPILA RELAZIONE</a></li>
-                    <li><a href = "class/contattaci.php">CONTATTACI</a></li>
-                    <li><a href = "Log_out.php">LOGOUT</a></li>
-                </ul>
-            </nav>
-        </header>
+    <title>Benvenuto!</title>
+</head>
 
-        <img src="img/gran_angolo.png" class="img">
-        <a href="http://www.istitutolevi.it"><img src="img/logo_levi.png" class="leviLogo"></a>
-        <a href="http://www.comune.vignola.mo.it"><img src="img/vignola_white_logo.png" class="vignolaLogo"></a>
-	</body>
+<body class="body">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+
+            <?php
+            echo "<h1>Benvenuto, $utente!</h1>"
+            ?>
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse dropdown" id="navbarResponsive">
+            <ul class="navbar-nav ml-5">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="class_home.php">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/proposte.php">MANDA PROPOSTA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/compila_modulo.php">COMPILA MODULO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/stampa_modulo.php">STAMPA MODULO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/gestisci_utente.php">GESTISCI UTENTE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/gestisci_proposte.php">GESTISCI PROPOSTE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/compila_relazione.php">COMPILA RELAZIONE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="class/contattaci.php">CONTATTACI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Log_out.php">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
 </html>

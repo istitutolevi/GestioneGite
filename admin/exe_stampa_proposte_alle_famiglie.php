@@ -1,15 +1,15 @@
 <?php
-include_once 'vendor/autoload.php';
-include ('session_admin.php');
+include_once '../vendor/autoload.php';
+include('../session_admin.php');
 $class = $_SESSION['n_classe'];
-include ('../conn_serv.php');
+include('../conn_serv.php');
 
 $contentType = 'Content-type: application/vnd.openxmlformats-officedocument.wordprocessingml.document;';
 
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
-$myFontStyle = array('bold' => true, 'underline' => 'single', 'size'=>8);
-$myFontStyle1 = array('bold' => true, 'size'=>8);
-$myFontStyle2 = array('italic' => true, 'size'=>8);
+$myFontStyle = array('bold' => true, 'underline' => 'single', 'size' => 8);
+$myFontStyle1 = array('bold' => true, 'size' => 8);
+$myFontStyle2 = array('italic' => true, 'size' => 8);
 
 $section = $phpWord->addSection();
 $sectionStyle = $section->getStyle();
@@ -26,49 +26,47 @@ $phpWord->addFontStyle(
 );
 
 $mievariabili = $_POST['selected'];
-$array=explode(' ',$mievariabili);
+$array = explode(' ', $mievariabili);
 
-$sql1="SELECT COUNT(id) AS conteggio FROM gita_definitiva";
-$results=mysqli_query($con,$sql1);
-$values=mysqli_fetch_assoc($results);
-$I=$values['conteggio'];
+$sql1 = "SELECT COUNT(id) AS conteggio FROM gita_definitiva";
+$results = mysqli_query($con, $sql1);
+$values = mysqli_fetch_assoc($results);
+$I = $values['conteggio'];
 
 $src = ('../img/Intestazione_scuola.png');
 $section->addImage($src);
 $section->addText('Comunicazione n. _____________                                                             Vignola, _______________', $fontStyleName);
-for ($a = 1; $a <= $I; $a++) 
-	{
-		$sql1 = "SELECT classe FROM gita_definitiva WHERE  meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]' AND id='$a'";
-		$result = mysqli_query($con, $sql1);
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-		${'b' . 'a'} = $row['classe'];
-		$n = $n . " " . $ba;	
-	}
-$section->addText('Agli Studenti della classe'.$n, $fontStyleName);
+for ($a = 1; $a <= $I; $a++) {
+    $sql1 = "SELECT classe FROM gita_definitiva WHERE  meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]' AND id='$a'";
+    $result = mysqli_query($con, $sql1);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    ${'b' . 'a'} = $row['classe'];
+    $n = $n . " " . $ba;
+}
+$section->addText('Agli Studenti della classe' . $n, $fontStyleName);
 $section->addText();
-$section->addText('Oggetto: Uscita didattica a '. $array[0] . ' ' . substr($array[1],8,2). "/" . substr($array[1],5,2) . "/" . substr($array[1],0,4), $myFontStyle);
+$section->addText('Oggetto: Uscita didattica a ' . $array[0] . ' ' . substr($array[1], 8, 2) . "/" . substr($array[1], 5, 2) . "/" . substr($array[1], 0, 4), $myFontStyle);
 $section->addText();
 
 $section->addText("Programma", $myFontStyle1);
 
-$sql1="SELECT programma FROM gita_definitiva WHERE meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]'";
+$sql1 = "SELECT programma FROM gita_definitiva WHERE meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]'";
 $result = mysqli_query($con, $sql1);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $programma = $row['programma'];
-$array2=explode('-',$programma);
+$array2 = explode('-', $programma);
 $num = count($array2);
-for($I=1;$I<$num;$I++)
-{
-$section->addText($array2[$I], $fontStyleName);
+for ($I = 1; $I < $num; $I++) {
+    $section->addText($array2[$I], $fontStyleName);
 }
 $section->addText();
 
-$sql1="SELECT doc_accom, doc_resp FROM gita_definitiva WHERE meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]'";
+$sql1 = "SELECT doc_accom, doc_resp FROM gita_definitiva WHERE meta='$array[0]' AND data_gita='$array[1]' AND doc_resp='$array[2]'";
 $result = mysqli_query($con, $sql1);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 $doc_accom = $row['doc_accom'];
 $doc_resp = $row['doc_resp'];
-$section->addText('i docenti accompagnatori saranno i proff. '. $doc_resp . ',' . $doc_accom . '.', $fontStyleName );
+$section->addText('i docenti accompagnatori saranno i proff. ' . $doc_resp . ',' . $doc_accom . '.', $fontStyleName);
 
 $section->addText();
 
@@ -82,11 +80,11 @@ essere versata entro ________________", $fontStyleName);
 
 $section->addText();
 
-$section->addText('Il referente: '.$doc_resp.'										Il Dirigente Scolastico', $fontStyleName);
+$section->addText('Il referente: ' . $doc_resp . '										Il Dirigente Scolastico', $fontStyleName);
 
 $section->addText('							                                                       Dott. Stefania Giovanetti', $fontStyleName);
 
-$section->addText('(Da consegnare compilato e firmato) - Ritagliare qui ——————————————————————————————' , $myFontStyle2);
+$section->addText('(Da consegnare compilato e firmato) - Ritagliare qui ——————————————————————————————', $myFontStyle2);
 
 $section->addText();
 
@@ -94,17 +92,17 @@ $section->addText("Il/la sottoscritto/a ________________________________________
 ____________________________________________ della classe ______ dichiara di autorizzare il/la figlio/a a partecipare alla
 seguente iniziativa :", $fontStyleName);
 
-$section->addText('Uscita didattica a '. $array[0] . ' ' . $array[1].'',
-$myFontStyle);
+$section->addText('Uscita didattica a ' . $array[0] . ' ' . $array[1] . '',
+    $myFontStyle);
 
 $section->addText("Il/la sottoscritto/a acconsente, pertanto, che egli/ella usufruisca dei mezzi di trasporto necessari e accetta consapevolmente tutte le
 condizioni previste dall’organizzazione della visita.
 Dichiara di sentirsi corresponsabile della condotta dello studente e di essere a conoscenza del fatto che gli studenti sono coperti da
 polizza assicurativa infortuni.
 Dichiara, inoltre, di sollevare l’Istituto Primo Levi e i docenti accompagnatori da ogni responsabilità civile e penale derivante da
-quanto possa accadere durante la visita medesima, come previsto dalla legge 11 luglio 1980 n. 312 titolo II art. 61." , $fontStyleName);
+quanto possa accadere durante la visita medesima, come previsto dalla legge 11 luglio 1980 n. 312 titolo II art. 61.", $fontStyleName);
 
-$section->addText('Data ______________________' , $fontStyleName);
+$section->addText('Data ______________________', $fontStyleName);
 
 $section->addText();
 
