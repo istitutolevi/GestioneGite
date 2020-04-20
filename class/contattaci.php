@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="#">
             <?php
