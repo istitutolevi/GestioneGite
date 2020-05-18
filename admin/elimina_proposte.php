@@ -7,18 +7,17 @@ if (isset($_POST['Elimina'])) {
 
     $host = "localhost";
     $username = "root";
-    $password = "";
-    $database = "sito_gite_db";
+    $password = "root";
+    $database = "sql958586_5";
     $message = "";
     try {
 
         $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "DROP TABLE sito_gite_db.proposte;";
+        $query = "DROP TABLE sql958586_5.proposte";
         $connect->exec($query);
         echo '<script type="text/javascript"> 
-                    alert(" Proposte eliminate ") 
-                    
+                    alert("Database Reset avvenuto!") ;
                     </script>';
 
     } catch (PDOException $error) {
@@ -136,16 +135,11 @@ if (isset($_POST['Elimina'])) {
                 <span>Gestisci Utenti</span></a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="reset_password.php">
-                <i class="fas fa-fw fa-reply"></i>
-                <span>Reset Password</span></a>
-        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="../sign_in.php">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Registrazione</span></a>
+                <span>Inserimento Classe</span></a>
         </li>
 
         <!-- Divider -->

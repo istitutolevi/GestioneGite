@@ -72,7 +72,9 @@
         <div class="container-fluid">
             <section class="row justify-content-center mt-5">
                 <div class="form-group">
+                    <form class="mt-5">
                     <h1 class="text-center">Per qualsiasi informazione scrivi a viaggi@istitutolevi.edu.it</h1>
+                    </form>
                 </div>
 
             </section>

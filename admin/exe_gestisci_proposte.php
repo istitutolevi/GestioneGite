@@ -118,7 +118,7 @@
         <li class="nav-item">
             <a class="nav-link" href="../sign_in.php">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Registrazione</span></a>
+                <span>Inserimento Classe</span></a>
         </li>
 
         <!-- Divider -->

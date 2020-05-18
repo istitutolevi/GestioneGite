@@ -122,6 +122,7 @@ if (isset($_POST['Elimina'])) {
                 <span>Elimina Proposte</span></a>
         </li>
 
+
         </br>
 
         <hr class="sidebar-divider d-none d-md-block">
@@ -136,16 +137,11 @@ if (isset($_POST['Elimina'])) {
                 <span>Gestisci Utenti</span></a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="reset_password.php">
-                <i class="fas fa-fw fa-reply"></i>
-                <span>Reset Password</span></a>
-        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="../sign_in.php">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Registrazione</span></a>
+                <span>Inserimento Classe</span></a>
         </li>
 
         <!-- Divider -->
@@ -210,8 +206,6 @@ if (isset($_POST['Elimina'])) {
                                 echo "<br>";
                                 echo "<br>";
                                 echo "<input type=\"radio\" class=\"form-check-input\" name=\"gestione_account\" value=\"User_become_admin\"> Nomina Utente Amministratore<br>";
-                                echo "<br>";
-                                echo "<input type=\"radio\" class=\"form-check-input\" name=\"gestione_account\" value=\"User_become_class\"> Nomina utente classe<br>";
                                 echo "<br>";
                                 echo "<input type=\"radio\" class=\"form-check-input\" name=\"gestione_account\" value=\"Delete_User\"> Elimina Utente<br>";
                                 echo "<br>";

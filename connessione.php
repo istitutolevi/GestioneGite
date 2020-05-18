@@ -6,7 +6,7 @@ $database = "Sql958586_5";
 // username dell'utente in connessione
 $user = "root";
 // password dell'utente
-$password = "";
+$password = "root";
 
 /*
   blocco try/catch di gestione delle eccezioni

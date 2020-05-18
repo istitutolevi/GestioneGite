@@ -108,19 +108,22 @@
                 <span>Gestisci Utenti</span></a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="admin/reset_password.php">
-                <i class="fas fa-fw fa-reply"></i>
-                <span>Reset Password</span></a>
-        </li>
 
         <li class="nav-item active">
             <a class="nav-link" href="sign_in.php">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Registrazione</span></a>
+                <span>Inserimento Classe</span></a>
         </li>
 
         <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <li class="nav-item">
+            <a class="nav-link" href="Log_out.php">
+                <i class="fas fa-fw fa-user-alt-slash"></i>
+                <span>Log Out</span></a>
+        </li>
+
         <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
@@ -144,7 +147,7 @@
                     <section class="col-12 col-sm-6 col-md-3">
                         <form id="sign-in" class="w-100" action="registration.php" method="POST">
                             <div class="form-group">
-                                <h1 class="text-center">Registrati</h1>
+                                <h1 class="text-center">Inserisci Classe</h1>
                                 <input type="text" class="form-control" name="Classe" placeholder="Classe*" tabindex="1" required>
                                 <br>
                                 <input type="text" name="Email" class="form-control" placeholder="Email*" tabindex="2" required>

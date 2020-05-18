@@ -111,15 +111,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="admin/reset_password.php">
-                <i class="fas fa-fw fa-reply"></i>
-                <span>Reset Password</span></a>
-        </li>
-
-        <li class="nav-item">
             <a class="nav-link" href="sign_in.php">
                 <i class="fas fa-fw fa-file-alt"></i>
-                <span>Registrazione</span></a>
+                <span>Inserimento Classe</span></a>
         </li>
 
         <!-- Divider -->
