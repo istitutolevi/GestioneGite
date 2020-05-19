@@ -93,7 +93,7 @@
         <li class="nav-item">
             <a class="nav-link" href="admin/elimina_proposte.php">
                 <i class="fas fa-fw fa-trash"></i>
-                <span>Elimina Proposte</span></a>
+                <span>Reset Database</span></a>
         </li>
 
         </br>

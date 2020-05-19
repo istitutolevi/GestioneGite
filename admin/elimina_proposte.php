@@ -1,34 +1,4 @@
-<?php
-include('../session_admin.php');
-include('script.php3');
-$utente = $_SESSION['n_classe'];
 
-if (isset($_POST['Elimina'])) {
-
-    $host = "localhost";
-    $username = "root";
-    $password = "root";
-    $database = "sql958586_5";
-    $message = "";
-    try {
-
-        $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $query = "DROP TABLE sql958586_5.proposte";
-        $connect->exec($query);
-        echo '<script type="text/javascript"> 
-                    alert("Database Reset avvenuto!") ;
-                    </script>';
-
-    } catch (PDOException $error) {
-
-        $message = $error->getMessage();
-
-    }
-
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +11,7 @@ if (isset($_POST['Elimina'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Elimina Proposte</title>
+    <title>Reset Database</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -118,7 +88,7 @@ if (isset($_POST['Elimina'])) {
         <li class="nav-item active">
             <a class="nav-link" href="elimina_proposte.php">
                 <i class="fas fa-fw fa-trash"></i>
-                <span>Elimina Proposte</span></a>
+                <span>Reset Database</span></a>
         </li>
 
         </br>
@@ -172,11 +142,11 @@ if (isset($_POST['Elimina'])) {
 
                 <section class="row justify-content-center">
                     <section class="col-12 col-sm-6 col-md-3">
-                        <form class="form-container" action="exe_stampa_proposte_alle_famiglie.php" method="POST">
+                        <form class="form-container" action="exe_reset_database.php" method="POST">
                             <div class="form-group">
-                                <h1 class="text-center">Elimina Proposte</h1>
-                                <input type="submit" class="btn btn-outline-dark btn-lg btn-block mb-1" value="Elimina"
-                                       name="Elimina">
+                                <h1 class="text-center">Reset Database</h1>
+                                <input type="submit" class="btn btn-outline-dark btn-lg btn-block mb-1" value="!! CONFERMA !!"
+                                       name="resetAnno">
                             </div>
                         </form>
                     </section>
